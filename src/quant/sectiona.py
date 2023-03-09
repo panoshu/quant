@@ -1,6 +1,5 @@
 # -*- coding: utf-8; py-indent-offset:4 -*-
-from __future__ import (absolute_import, division, print_function,
-                        unicode_literals)
+from __future__ import absolute_import, division, print_function, unicode_literals
 
 import datetime
 import os.path
@@ -49,7 +48,6 @@ class TestStrategy(bt.Strategy):
 
         # Check if we are in the market
         if not self.position:
-
             # Not yet ... we MIGHT BUY if ...
             if self.dataclose[0] < self.dataclose[-1]:
                 # current close less than previous close
@@ -90,6 +88,8 @@ if __name__ == '__main__':
 
     cerebro.adddata(data)
     cerebro.broker.setcash(10_000_000.0)
+
+    cerebro.broker.setcommission(commission=0.0001)
 
     print('Starting Portfolio Value: %.2f' % cerebro.broker.getvalue())
 
