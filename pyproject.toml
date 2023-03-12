@@ -10,6 +10,8 @@ packages = [{include = "quant", from = "src"}]
 python = "^3.11"
 backtrader = {git = "https://github.com/backtrader2/backtrader.git"}
 btplotting = {git = "https://github.com/happydasch/btplotting.git"}
+baostock = "^0.8.8"
+click = "^8.1.3"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.21.3"
