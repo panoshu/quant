@@ -3,15 +3,9 @@
 """ 从 baostock 获取 daily 数据到 datas 目录下的 csv 文件当中，文件名如：bs_sh.000001.csv """
 
 import baostock as bs
-import click
 import pandas as pd
 
 
-@click.command()
-@click.option("--code", default="sh.000905", help="baostock 股票/指数代码, 如 sh.600000")
-@click.option("--start", default="2010-01-01", help="开始日期，格式如：2010-01-01")
-@click.option("--end", default="2023-03-01", help="结束日期，格式如：2010-01-01")
-@click.option("--adj", default="1", help="复权类型 (只针对股票): 3: 未复权 2:前复权 1:后复权 , 默认 1")
 def baostockdata(code, start, end, adj):
     lg = bs.login()
     print('login respond error_code:' + lg.error_code)
